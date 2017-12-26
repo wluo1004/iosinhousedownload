@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://zshgmj.oss-cn-hangzhou.aliyuncs.com/jmdz.ipa</string>
+					<string>http://jmdztest.oss-cn-hangzhou.aliyuncs.com/jmdz.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>http://cdnbig.ddyol.com/down/Icon-152.png</string>
+					<string>http://jmdztest.oss-cn-hangzhou.aliyuncs.com/imgs/Icon-152.png</string>
                 </dict>
 				<dict>
 					<key>kind</key>
@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>http://cdnbig.ddyol.com/down/Icon.png</string>
+					<string>http://jmdztest.oss-cn-hangzhou.aliyuncs.com/imgs/Icon.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
