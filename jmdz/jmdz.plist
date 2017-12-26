@@ -33,7 +33,7 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.inhouse.game.fishing</string>
+				<string>com.hxyp.gamehall</string>
 				<key>bundle-version</key>
 				<string>1.0.0</string>
 				<key>kind</key>
