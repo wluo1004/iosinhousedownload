@@ -67,14 +67,13 @@
         }
 
         function isWeiXin(){
-            // isOpenGame();
-            // var ua = window.navigator.userAgent.toLowerCase();
-            // if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-            //     var cover = document.getElementById("cover");
-            //     cover.style.display = 'block';
-            // }else{
-            //     isOpenGame();
-            // }
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                var cover = document.getElementById("cover");
+                cover.style.display = 'block';
+            }else{
+                isOpenGame();
+            }
         }
 
         function isOpenGame() {
@@ -93,25 +92,23 @@
             // alert("_roomid======"+_roomid);
             // alert("_isdownLoad======"+_isdownLoad);
             if (_isdownLoad == null || _isdownLoad == undefined || _isdownLoad == ''){
-                // window.location.href = "com.ddy.jcqp://roomid="+_roomid;
-                window.location.href = "https://xiaoweige.weixinyc.com/jcqp.html?roomid="+_roomid;
+                window.location = "com.ddy.zzmj://roomid="+_roomid;
             }
         }
     </script>
 </head>
 <body onload="isWeiXin()">
 <div id="cover"><img src="images/ios.png"  width="100%" /> </div>
-<img src="images/icon512.png" alt="" class="down-status-img">
-<p class="down-status-p">巨财棋牌 IOS</p>
+<img src="images/152.png" alt="" class="down-status-img">
+<p class="down-status-p">湘潭麻将 IOS</p>
 <a href="iosInstallCourse.html"><p class="down-status-p-1">点击查看"<font color="#006400">未受信任的企业级开发者</font>"解决办法</p></a>
-<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/wluo1004/iosinhousedownload/master/jcqp/jcqp.plist" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
-<button class="install" id="btnInstall" onclick="isOpenGame()">立即打开</button>
+<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/wluo1004/iosinhousedownload/master/zzmj/zzmj.plist" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
 <script>
-    // isOpenGame()
     function install(){
         document.getElementById('btnInstall').disabled = true;
         document.getElementById('btnInstall').style.backgroundColor = "silver";
     }
+
 </script>
 
 
