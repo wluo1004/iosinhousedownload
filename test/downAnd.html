@@ -80,7 +80,7 @@
             var _roomid = GetQueryString("roomid");
             var _isdownLoad = GetQueryString("_isdownLoad");
             if (_isdownLoad == null || _isdownLoad == undefined || _isdownLoad == ''){
-                window.location = "com.ddy.zzmj://test/test?roomid="+_roomid;
+                window.location = "com.ddy.zsqp://test/test?roomid="+_roomid;
             }
         }
     </script>
@@ -88,8 +88,8 @@
 <body onload="isWeiXin()">
 <div id="cover"><img src="images/android.png"  width="100%" /> </div>
 <img src="images/152.png" alt="" class="down-status-img">
-<p class="down-status-p">湘潭麻将 Android</p>
-<a href="http://hnzzmj.oss-cn-hangzhou.aliyuncs.com/zzmj.apk" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
+<p class="down-status-p">棋牌内测 Android</p>
+<a href="http://zshgmj.oss-cn-hangzhou.aliyuncs.com/package/zsqp.apk" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
 <script>
     function install(){
         document.getElementById('btnInstall').disabled = true;

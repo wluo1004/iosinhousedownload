@@ -92,7 +92,7 @@
             // alert("_roomid======"+_roomid);
             // alert("_isdownLoad======"+_isdownLoad);
             if (_isdownLoad == null || _isdownLoad == undefined || _isdownLoad == ''){
-                window.location = "com.ddy.zzmj://roomid="+_roomid;
+                window.location = "com.ddy.zsqp://roomid="+_roomid;
             }
         }
     </script>
@@ -100,9 +100,9 @@
 <body onload="isWeiXin()">
 <div id="cover"><img src="images/ios.png"  width="100%" /> </div>
 <img src="images/152.png" alt="" class="down-status-img">
-<p class="down-status-p">湘潭麻将 IOS</p>
+<p class="down-status-p">棋牌内测 IOS</p>
 <a href="iosInstallCourse.html"><p class="down-status-p-1">点击查看"<font color="#006400">未受信任的企业级开发者</font>"解决办法</p></a>
-<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/wluo1004/iosinhousedownload/master/zzmj/zzmj.plist" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
+<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/wluo1004/iosinhousedownload/master/test/test.plist" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
 <script>
     function install(){
         document.getElementById('btnInstall').disabled = true;
