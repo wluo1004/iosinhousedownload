@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="byxj">
+    <meta name="description" content="byxj">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title></title>
+    <style type="text/css">
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #FFF;
+        }
+        .down-status-img {
+            display: block;
+            width: 220px;
+            margin: 40px auto;
+        }
+
+        .down-status-p {
+            text-align: center;
+            color: #909090;
+        }
+
+        .down-status-p-1 {
+            text-align: center;
+            color: #F98410;
+            font-size: 14px;
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: #999;
+        }
+
+        .install {
+            width: 40%;
+            height: 30px;
+            color: #FFF;
+            background-color: #F98410;
+            border: 0;
+            border-radius: 4px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        #cover{
+            display:none;
+            position:fixed;
+            z-index:1;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0, 0, 0, 0.44);
+        }
+
+    </style>
+    <script language="javascript" type="text/javascript">
+        function GetQueryString(name){
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                var cover = document.getElementById("cover");
+                cover.style.display = 'block';
+            }else{
+                isOpenGame();
+            }
+        }
+
+        function isOpenGame() {
+            // alert("isOpenGame");
+            // var ifr = document.createElement("iframe");
+            // ifr.src = "com.ddy.hmmj://";
+            // ifr.style.display = "none"; 
+            // document.body.appendChild(ifr);
+            // window.setTimeout(function(){
+            //   document.body.removeChild(ifr);
+            //    window.location.href = "http://www.baidu.com"; /***下载app的地址***/
+            // },5000)
+
+            var _roomid = GetQueryString("roomid");
+            var _isdownLoad = GetQueryString("_isdownLoad");
+            // alert("_roomid======"+_roomid);
+            // alert("_isdownLoad======"+_isdownLoad);
+            if (_isdownLoad == null || _isdownLoad == undefined || _isdownLoad == ''){
+                window.location = "com.ddy.nbmj://roomid="+_roomid;
+            }
+        }
+    </script>
+</head>
+<body onload="isWeiXin()">
+<div id="cover"><img src="images/ios.png"  width="100%" /> </div>
+<img src="images/icon512.png" alt="" class="down-status-img">
+<p class="down-status-p">宁波麻将 IOS</p>
+<a href="iosInstallCourse.html"><p class="down-status-p-1">点击查看"<font color="#006400">未受信任的企业级开发者</font>"解决办法</p></a>
+<a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/wluo1004/iosinhousedownload/master/nbmj/nbmj.plist" onclick="install()"><button class="install" id="btnInstall">立即安装</button></a>
+<script>
+    function install(){
+        document.getElementById('btnInstall').disabled = true;
+        document.getElementById('btnInstall').style.backgroundColor = "silver";
+    }
+
+</script>
+
+
+</body>
+</html>
