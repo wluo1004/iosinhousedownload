@@ -1,47 +1,278 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+﻿<!DOCTYPE html>
+<html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="byxj">
-    <meta name="description" content="byxj">
-    <meta name="viewport" content="user-scalable=0">
-    <title></title>
-    <style type="text/css">
-        html,body{
-
-        width:100%;
-
-        height:100%;
-
-        }
-
-        body {
-        margin-left: 0px;
-        margin-top: 0px;
-        margin-right: 0px;
-        margin-bottom: 0px;
-        }
-    </style>
-    <script language="javascript" type="text/javascript">
-        function GetQueryString(name){
-            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if(r!=null)return  unescape(r[2]); return null;
-        }
-
-        function IosOrAndroid(){
-            var _roomid = GetQueryString("roomid");
-            var ua = navigator.userAgent.toLowerCase();
-            if (/iphone|ipad|ipod/.test(ua)) {
-                window.location.href="downIos.html?roomid="+_roomid;
-            } else if (/android/.test(ua)) {
-                window.location.href="downAnd.html?roomid="+_roomid;
-            } else{
-                window.location.href="default.html?roomid="+_roomid;
-            }
-        }
-    </script>
+    <meta charset="UTF-8">
+    <title>
+        农信银
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-select=no"/>
+    <link rel="stylesheet" type="text/css" href='http://nxt.nongxinyin.com/buybal-api/css/new_file.css?v=2'/>
 </head>
-<body onload="IosOrAndroid()">
+<script type="text/javascript" src="http://nxt.nongxinyin.com/buybal-api/js/keyboard.js?v=3"></script>
+<script type="text/javascript" src="http://nxt.nongxinyin.com/buybal-api/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://nxt.nongxinyin.com/buybal-api/js/NXYJS.min.js"></script>
+<script type="text/javascript" src="http://nxt.nongxinyin.com/buybal-api/js/jquery.Modal.js"></script>
+<script type="text/javascript" src="http://nxt.nongxinyin.com/buybal-api/js/weChatFont.js"></script>
+<style>
+    body{
+        position: relative;
+    }
+    body{
+        position: relative;
+    }
+    .Amt_aab{
+        width:90%;
+        padding-bottom: 0.1rem;
+        background: #f7f7f7;
+        border-radius: 0.15rem;
+        margin-left: 5%;
+        font-size: 0.12rem;
+        text-align: center;
+        position: absolute;
+        top:0.7rem;
+        z-index:100;
+    }
+    .Amt_aab p{
+        /*padding-top: 0.15rem;*/
+        font-size: 0.16rem;
+    }
+    .Amt_aab input{
+        width: 2.5rem;
+        height: 0.4rem;
+        border-radius: 0.02rem;
+        text-align: center;
+        font-size: 0.12rem;
+        outline: medium;
+        border: 1px solid #eeeeee;
+        margin-top: 0.1rem;
+    }
+    .save_ab{
+        width:100%;
+        display: flex;
+        margin-top: calc(1.25rem - 0.39rem - 0.48rem - 0.18rem);
+    }
+    .save_ab button{
+        width: 50%;
+        background: #f7f7f7;
+        height: 0.39rem;
+        border: 0;
+        border-top: 2px solid #eeeeee;
+        border-right: 2px solid #eeeeee;
+        font-size: 0.18rem;
+        outline: medium;
+        color:#0f81f3;
+    }
+</style>
+
+
+<body>
+
+<form action="http://nxt.nongxinyin.com/buybal-api/v1.0/cashier/cashier" method="post" id="fmt">
+    <input type="hidden" id="code" name="code" value="17478855">
+    <input type="hidden" id="authCode" name="authCode" value="071DvSkd0cw4iB1XIAkd0r14ld0DvSko">
+    <input type="hidden" id="uuid" name="uuid" value="E882B87B8B3F4287A5E06BF98BEC5BF7">
+    <input type="hidden" id="flag" name="flag" value="">
+    <input type="hidden" id="memId" name="memId" value="oMxlxwcbOHJcwmVfGC4b_e5UK2hY">
+    <input type="hidden" id="mark" name="mark" value="17478855">
+    <input type="hidden" id="funSource" name="funSource" value="1">
+    <input type="hidden" id="amount" name="amount" value="0.69">
+
+    
+    <input type="hidden" name = "bodyDesc" id="bodyDesc", value="asdfasfd">
+    <button id="amt" type="button" onclick="submitForm();">确认付款</button>
+<!--     <section>
+        <p class="prompt">您正在向<em>缘尚旅游服务有限公司</em>商家发起付款</p>
+        <span class="xian"></span>
+        <div class="content">
+            <span>支付金额</span>
+            <div class="img_input">
+                <img class="img_h" src="http://nxt.nongxinyin.com/buybal-api/imgs/2.jpg"/>
+                <input type="text" id="tezt_amt" name="amount" placeholder="请输入付款金额"/>
+            </div>
+            <div style="width:100%;color:red;font-size:0.1rem;margin-bottom:15px;text-align:left" >请仔细核对收款人信息是否与商户一致，谨防伪冒收款码</div>
+            <span style="color:#58c4ff;width: 90%;display: flex;justify-content: flex-end;" id="check_amt" onclick="openPayNote();">添加付款备注</span>         
+            <button id="amt" type="button" onclick="submitForm();">确认付款</button>
+        </div>
+
+    </section> -->
+    <!-- <em style="font-size: 14px; color: #A0A0A0; text-align: center; display: block; font-style: normal">网联客全国技术服务热线：4008003588</em> -->
+</form>
+<!-- <button id="amt" type="button" onclick="mobilePay22();">确认付款</button> -->
+<!--rem格式-->
+<script>
+    function FontSize() {
+        var docu = document;
+        width = docu.documentElement.clientWidth,
+            base = 320,
+            muldata = width / 320;
+        //
+        docu.documentElement.style.fontSize = (muldata * 100) + 'px';
+        //                    console.log(aa);
+    }
+    FontSize();
+</script>
+<script type="text/javascript">
+    /**
+     *  打开添加备注页面
+     **/
+    function openPayNote(){
+        //给文本框赋值
+        $('#descContent').val($("#bodyDesc").val());
+        $('#modal').show();
+        $("#descContent").click();
+        $("#descContent").focus();
+        $(".quxiao").click(function(){
+            $('#modal').hide();
+        });
+
+        $(".queren").click(function(){
+            $('#modal').hide();
+            var descContent = $("#descContent").val();
+            if(descContent.length===0){
+                $('#check_amt').html("添加付款备注");
+                $('#bodyDesc').val("");
+            }else{
+                $('#check_amt').html(descContent);
+                $('#bodyDesc').val(descContent);
+            }
+        });
+    }
+    /**
+     *  初始化页面
+     **/
+    (function (e) {
+        var input1 = document.getElementById('tezt_amt'),
+            input2 = document.getElementById('tezt_amt').value;
+        input1.onclick = function (e) {
+            new KeyBoard(input1);
+            document.getElementById("__w_l_h_v_c_z_e_r_o_divid").style.fontSize = "24px";
+        };
+
+    })();
+    function submitForm() {
+        // var tezt_amt = document.getElementById("tezt_amt").value;
+        // if (tezt_amt == "") {
+        //     $.Modal({content:'必须输入金额！'});
+        //     return false;
+        // }
+        // if (tezt_amt == 0) {
+        //     $.Modal({content:'非法金额！'});
+        //     return false;
+        // }
+        // if (tezt_amt.indexOf(".") == -1) {
+        //     if (!/^\d{0,12}$/.test(tezt_amt)) {
+        //         $.Modal({content:'金额格式不正确'});
+        //         return false;
+        //     }
+        // } else {
+        //     if (!/^(\d{0,10})(\.\d{1,2})?$/.test(tezt_amt)) {
+        //         $.Modal({content:'金额格式不正确'});
+        //         return false;
+        //     }
+        // }
+        document.getElementById("amt").disabled = true;
+
+        var flag = document.getElementById("flag").value;
+        // 普通下单
+        alert("flag = "+flag);
+        if (flag != 01) {
+            document.getElementById('fmt').submit();
+        } else {
+            mobilePay22();
+        }
+    }
+    //手机银行的下单通过ajax请求实现
+    function mobilePay() {
+        alert("mobilePay");
+        var mark = $("#mark").val();
+        var authCode = $("#authCode").val();
+        var uuid = $("#uuid").val();
+        var flag = $("#flag").val();
+        var tezt_amt = $("#tezt_amt").val();
+        var bodyDesc = $("#bodyDesc").val();
+        var memId = $("#memId").val();
+        var funSource = $("#funSource").val();
+        $.ajax({
+            url: 'http://nxt.nongxinyin.com/buybal-api/v1.0/cashier/mobileCashier',
+            type: 'Post',
+            async: false,
+            data: {'mark': mark, 'authCode': authCode, 'uuid': uuid, 'flag': flag, 'amount': tezt_amt, 'bodyDesc': bodyDesc,'funSource':funSource},
+            success: function (data) {
+                var d = data.data;
+                var k = data.key;
+                if (data.msg == undefined) {
+                    NXYJS.paymentSure(d, k);
+                } else {
+                    $.Modal({content:data.msg});
+                    document.getElementById("amt").disabled = false;
+                }
+            }
+        });
+    }
+
+    function mobilePay22() {
+        var mark = "17478855";
+        var authCode = "001AjSPg2DKbdB0KOEPg2OmRPg2AjSPc";
+        var uuid = "A303D83875854C91AE5B147C8DD49F78";
+        var flag = "0";
+        var tezt_amt = "0.69";
+        var bodyDesc = "购买商品";
+        // var memId = $("#memId").val();
+        var funSource = "1";
+        alert("mobilePay22");
+        $.ajax({
+            url: 'http://nxt.nongxinyin.com/buybal-api/v1.0/cashier/mobileCashier',
+            type: 'Post',
+            async: false,
+            data: {'mark': mark, 'authCode': authCode, 'uuid': uuid, 'flag': flag, 'amount': tezt_amt, 'bodyDesc': bodyDesc,'funSource':funSource},
+            success: function (data) {
+                var d = data.data;
+                var k = data.key;
+                if (data.msg == undefined) {
+                    NXYJS.paymentSure(d, k);
+                } else {
+                    $.Modal({content:data.msg});
+                    document.getElementById("amt").disabled = false;
+                }
+            }
+        });
+    }
+</script>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#tezt_amt").trigger("click");
+        // setTimeout(mobilePay22, 2000);
+    })
+    $("#tezt_amt").focus(function () {
+        document.activeElement.blur();
+    });
+    var timeOutEvent = 0;
+    $(function () {
+        $('body').on('touchstart', '.delete', function (e) {
+            var val = $("#tezt_amt").val();
+            var deVal = val.substr(0, val.length - 1);
+            $("#tezt_amt").val(deVal);
+            longPress()
+            e.preventDefault();
+        }).on('touchmove', '.delete', function () {
+        }).on('touchend', '.delete', function () {
+            clearInterval(timeOutEvent);
+            if (timeOutEvent != 0) {
+
+            }
+            return false;
+        })
+    });
+    function longPress() {
+        timeOutEvent = setInterval(function () {
+            var val = $("#tezt_amt").val();
+            var deVal = val.substr(0, val.length - 1);
+            $("#tezt_amt").val(deVal);
+        }, 200)
+    }
+</script>
+
 </html>
