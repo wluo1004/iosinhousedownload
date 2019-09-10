@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://lxwldownload.oss-cn-shanghai.aliyuncs.com/qyqp.ipa</string>
+					<string>https://qchotupdate.oss-cn-hangzhou.aliyuncs.com/qyqp.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>http://statuscheck.91ylgame.com/down/Icon-152.png</string>
+					<string>http://updatecheck.jywlqp.com/down/Icon-152.png</string>
                 </dict>
 				<dict>
 					<key>kind</key>
@@ -27,19 +27,19 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>http://statuscheck.91ylgame.com/down/Icon.png</string>
+					<string>http://updatecheck.jywlqp.com/down/Icon.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.qyw.qyqp</string>
+				<string>com.qyw.qyqp.qcmj</string>
 				<key>bundle-version</key>
 				<string>1.0.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>趣赢棋牌</string>
+				<string>乐游蕲春麻将</string>
 			</dict>
 		</dict>
 	</array>
