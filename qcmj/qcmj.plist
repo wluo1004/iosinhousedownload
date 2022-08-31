@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://cygamedownload.oss-cn-hangzhou.aliyuncs.com/cyzy.ipa</string>
+					<string>https://qcnewnew.oss-cn-hangzhou.aliyuncs.com/qcmj.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>https://cygamedownload.oss-cn-hangzhou.aliyuncs.com/512.png</string>
+					<string>https://qcnewnew.oss-cn-hangzhou.aliyuncs.com/512.png</string>
                 </dict>
 				<dict>
 					<key>kind</key>
@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<false/>
 					<key>url</key>
-					<string>https://cygamedownload.oss-cn-hangzhou.aliyuncs.com/152.png</string>
+					<string>https://qcnewnew.oss-cn-hangzhou.aliyuncs.com/152.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
@@ -39,7 +39,7 @@
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>崇阳掌游</string>
+				<string>闲趣</string>
 			</dict>
 		</dict>
 	</array>
